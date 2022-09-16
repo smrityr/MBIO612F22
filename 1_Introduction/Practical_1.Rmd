@@ -1,8 +1,13 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 ### Question 1
 
 *  Draw a concepts diagram that uses all the following R and programming terminology 
    * Include any missing keywords that will simplify the concepts diagrams 
-## I am answering the questions
+
 
 `Code`, `Variable`, `Data`, `Function`, `Call`, `Invoke`, `Type`, `Expression`, `Assign`, `Return value`, `Character`, `Numeric`, `Integer`, `Logical`, `Data structure`, `Arguments`, `Parameters`, `Default values`, `Vector`, `Data Type`, `Statement`, `Comment`
 
@@ -33,11 +38,22 @@ R users can, if they wish, include the URL where their image can be found.
   * A title that reads: "This is a markdown test"
   * Text that reads: "the variable y contains the mean of 5 values."
   * Try to format (emphasize) the name `x` so it stands out.
+  
+```{r}\n\n\```
+"This is a markdown Test"
+The variable y contains the mean of 5 values of **x**
 
 
 ```{r}
 # Write you code in this cell
+setwd("C:/Users/smrit/Documents/GitHub/MBIO612F22/1_Introduction")
+x <- runif(5, min = 1, max = 50)
+print(x)
+y <- mean(x)
+print(y)
 ```
+
+
 
 ### Question 3
 
@@ -52,24 +68,35 @@ In cell below:
 
 ```{r}
 # Write you code in this cell
+sec_per_min = 60
+sec_per_hour = sec_per_min*60
+sec_per_day = sec_per_hour*24
+print(sec_per_day)
+
 ```
 
 ### Question 4
 
 * Recall that `c` creates atomic vectors
+c() in R is used to create a vector by explicitely giving values of a common type
+
 
 * What does the following create? 
   * Specifically, what is the of the data it contains?
 
 `c(1, 2, 3, "Hi")`
 
+This creates a generic vector that contains 1,2,3, Hi. R recognizes this not as a numeric data, but as a character data because it is heterogenous.
+
+
 * Would the following be valid?
 
 `c(1, 2, 3, "Hi") + 1 `
-
+No. Becasue we are trying to add a number to a non-numerical value.
 * How about 
 
 `c(1, 2, 3, FALSE) + 1 `
+Yes. FALSE in R is a logical argument, and assigns the value 0 (against TRUE which is 1). Hence, this can be valid, though not very good housekeeping of data, in my opinion.
 
 * Hint: recall that know that the function `class()` returns the atomic data type stored in a vector
 
@@ -89,7 +116,7 @@ In cell below:
 
 ```{r}
 # Write you code in this cell
-
+x_axis <- seq(0,10, by = 0.5)
 ```
 
 ### Create `y-axis` values
@@ -104,6 +131,8 @@ In cell below:
 
 ```{r}
 # Write you code in this cell
+y_axis <- ((x_axis^2) + 2*(x_axis) + 3)
+
 
 ```
 
@@ -125,7 +154,8 @@ In cell below:
 
 ```{r}
 # Write you code in this cell
-
-
-```
-
+library(ggplot2)
+library(tidyverse)
+?qplot
+qplot(x_axis, y_axis, geom = "path", main = "Gas Consumption by car", xlab = "Gas (litres)", ylab = "Distance (m)")
+  
