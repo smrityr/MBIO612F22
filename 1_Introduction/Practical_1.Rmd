@@ -33,15 +33,20 @@ R users can, if they wish, include the URL where their image can be found.
 * Test the runtime to make sure everything works, use the cell below to instantiate a vector `x` with any 5 values and computing its mean.
   * The mean function can be invoked using `mean` and passing it `x`
   * Assign the returned value to a variable called `y`
+```{r}
+##This is a markdown test
+
+the variable y contains the mean of 5 values of**X**.
+
+
+```
 
 * Create a cell above the current one and describe the computation that you just did
   * A title that reads: "This is a markdown test"
   * Text that reads: "the variable y contains the mean of 5 values."
   * Try to format (emphasize) the name `x` so it stands out.
   
-```{r}\n\n\```
-"This is a markdown Test"
-The variable y contains the mean of 5 values of **x**
+
 
 
 ```{r}

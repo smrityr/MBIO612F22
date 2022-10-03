@@ -12,6 +12,7 @@ setwd("C:/Users/smrit/Documents/GitHub/MBIO612F22/2_Data_structure")
 
 ```{r}
 # Add your photo here
+
 ```
 
 
